@@ -1,1 +1,43 @@
 # board-game-manager
+
+## planned
+
+- ember
+- express
+- vue
+- angular
+- react
+- fuelphp
+- cakephp
+- symfony
+- meteor
+- zend
+- jquery
+- ruby on rails
+- codeigniter
+- plain js
+- plain php
+- plain css
+- plain html
+- django
+- bootstrap
+- flask
+- semantic ui
+- mongodb
+- mysql
+- laravel
+- materialize
+- bulma
+- meteor
+- loopback
+- adonisjs
+- aurelia
+- next
+- mux
+- gatsby
+- koa
+- restify
+- graphql
+- nest
+- svelte
+- tailwind
