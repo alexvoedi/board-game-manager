@@ -1,5 +1,22 @@
 # board-game-manager
 
+# funktionalität
+- Nutzer
+  - Registieren
+  - Anmelden
+  - Profil anpassen
+    - Nutzername
+    - Email-Adresse
+    - Passwort
+- Spiele verwalten
+  - Spiele hinzufügen
+  - Spiele bearbeiten
+  - Spiele entfernen
+- Sessions verwalten
+  - Session hinzufügen
+  - Session bearbeiten
+  - Session löschen
+
 ## planned
 
 - ember
@@ -41,3 +58,5 @@
 - nest
 - svelte
 - tailwind
+- ktor
+- spring
