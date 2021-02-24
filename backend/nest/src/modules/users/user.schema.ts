@@ -1,7 +1,7 @@
 import { Prop, SchemaFactory, Schema } from '@nestjs/mongoose';
-import { Document } from 'mongoose';
+import { Document, Types } from 'mongoose';
 import * as bcrypt from 'bcrypt';
-import { Exclude } from 'class-transformer';
+import { Collection } from '../collection/collection.schema';
 
 export type UserDocument = User & Document;
 
@@ -10,9 +10,11 @@ export class User {
   @Prop({ required: true, unique: true })
   username: string;
 
-  @Prop({ required: true })
-  @Exclude()
+  @Prop({ required: true, select: false })
   password: string;
+
+  @Prop({ type: [Types.ObjectId], ref: Collection.name })
+  collections: Collection[] = [];
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);
