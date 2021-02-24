@@ -1,4 +1,15 @@
-import { Body, Controller, Get, Inject, Param, Post } from '@nestjs/common';
+import {
+  Body,
+  ClassSerializerInterceptor,
+  Controller,
+  Get,
+  Inject,
+  Param,
+  Post,
+  UseGuards,
+  UseInterceptors,
+} from '@nestjs/common';
+import { JwtAuthGuard } from 'src/guards/jwt-auth.guard';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UsersService } from './users.service';
 
@@ -10,8 +21,10 @@ export class UsersController {
   ) {}
 
   @Get(':userId')
+  @UseGuards(JwtAuthGuard)
+  @UseInterceptors(ClassSerializerInterceptor)
   findOne(@Param('userId') userId: string) {
-    return this.usersService.findOne(userId);
+    return this.usersService.findOneById(userId);
   }
 
   @Post()

@@ -27,7 +27,13 @@ export class UsersService {
     }
   }
 
-  async findOne(username: string) {
-    return await this.userModel.findOne({ username });
+  async findOneById(id: string) {
+    const user = await this.userModel.findById(id);
+    return user.toObject();
+  }
+
+  async findOneByUsername(username: string) {
+    const user = await this.userModel.findOne({ username });
+    return user.toObject();
   }
 }

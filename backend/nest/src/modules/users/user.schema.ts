@@ -1,6 +1,7 @@
 import { Prop, SchemaFactory, Schema } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 import * as bcrypt from 'bcrypt';
+import { Exclude } from 'class-transformer';
 
 export type UserDocument = User & Document;
 
@@ -10,6 +11,7 @@ export class User {
   username: string;
 
   @Prop({ required: true })
+  @Exclude()
   password: string;
 }
 
